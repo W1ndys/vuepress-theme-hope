@@ -873,9 +873,6 @@ importers:
 
   packages/md-enhance:
     dependencies:
-      '@mdit/plugin-alert':
-        specifier: ^0.13.1
-        version: 0.13.1(markdown-it@14.1.0)
       '@mdit/plugin-align':
         specifier: ^0.13.1
         version: 0.13.1(markdown-it@14.1.0)
@@ -886,9 +883,6 @@ importers:
         specifier: ^0.13.1
         version: 0.13.1(markdown-it@14.1.0)
       '@mdit/plugin-demo':
-        specifier: ^0.13.1
-        version: 0.13.1(markdown-it@14.1.0)
-      '@mdit/plugin-footnote':
         specifier: ^0.13.1
         version: 0.13.1(markdown-it@14.1.0)
       '@mdit/plugin-include':
@@ -910,9 +904,6 @@ importers:
         specifier: ^0.13.1
         version: 0.13.1(markdown-it@14.1.0)
       '@mdit/plugin-sup':
-        specifier: ^0.13.1
-        version: 0.13.1(markdown-it@14.1.0)
-      '@mdit/plugin-tasklist':
         specifier: ^0.13.1
         version: 0.13.1(markdown-it@14.1.0)
       '@mdit/plugin-uml':
@@ -945,9 +936,6 @@ importers:
       flowchart.ts:
         specifier: ^3.0.0
         version: 3.0.1
-      js-yaml:
-        specifier: ^4.1.0
-        version: 4.1.0
       kotlin-playground:
         specifier: ^1.23.0
         version: 1.30.0
@@ -988,9 +976,6 @@ importers:
       '@types/babel__core':
         specifier: 7.20.5
         version: 7.20.5
-      '@types/js-yaml':
-        specifier: 4.0.9
-        version: 4.0.9
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.18
         version: 2.0.0-rc.18(@types/node@22.7.7)(jiti@1.21.6)(lightningcss@1.27.0)(sass-embedded@1.80.3)(sass@1.80.3)(terser@5.36.0)(tsx@4.19.1)(typescript@5.6.3)(yaml@2.6.0)
@@ -2772,12 +2757,6 @@ packages:
       markdown-it:
         optional: true
 
-  '@mdit/plugin-footnote@0.13.1':
-    resolution: {integrity: sha512-46TzNvY9QXO5y6MbXlewCe+gfw3lgF2IFQCs0enaWVSgKNaGxOuecDR68SlbLPc7unJQCcs5Bb/XB4xsx0depQ==}
-    engines: {node: '>= 18'}
-    peerDependencies:
-      markdown-it: ^14.1.0
-
   '@mdit/plugin-img-lazyload@0.13.1':
     resolution: {integrity: sha512-DPzR+yabbgqHWHb8oetOj56TtZzOcn5YZjSTssoh7lY5hp/Yy7jWvlLDrSw/LiXkYEhyocUee78enhTodBEpHQ==}
     engines: {node: '>= 18'}
@@ -2892,15 +2871,6 @@ packages:
 
   '@mdit/plugin-tab@0.13.2':
     resolution: {integrity: sha512-evpIXvo6vXRWhgNE6vu4ok1I2dVOzrBYmBUGc1gW8nT9MvkW9litu7RbJ6CafscqaiiYRIM5Oib1ahS0lwte6g==}
-    peerDependencies:
-      markdown-it: ^14.1.0
-    peerDependenciesMeta:
-      markdown-it:
-        optional: true
-
-  '@mdit/plugin-tasklist@0.13.1':
-    resolution: {integrity: sha512-flEWnDJFEB7QZIHRwtkVjAEZe9ONiRQLRg7oazRDBM/3Z0rf28blxOx7qj2QZ/FVzQnRRZTgjFQkpiz61IckKQ==}
-    engines: {node: '>= 18'}
     peerDependencies:
       markdown-it: ^14.1.0
     peerDependenciesMeta:
@@ -3553,9 +3523,6 @@ packages:
 
   '@types/istanbul-reports@3.0.4':
     resolution: {integrity: sha512-pk2B1NWalF9toCRu6gjBzR69syFjP4Od8WRAX+0mmf9lAjCRicLOWc+ZrxZHx/0XRjotgkF9t6iaMJ+aXcOdZQ==}
-
-  '@types/js-yaml@4.0.9':
-    resolution: {integrity: sha512-k4MGaQl5TGo/iipqb2UDG2UwjXziSWkh0uysQelTlJpX1qGlpUZYm8PnO4DxG1qBomtJUdYJ6qR6xdIah10JLg==}
 
   '@types/json-schema@7.0.15':
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
@@ -11773,11 +11740,6 @@ snapshots:
     optionalDependencies:
       markdown-it: 14.1.0
 
-  '@mdit/plugin-footnote@0.13.1(markdown-it@14.1.0)':
-    dependencies:
-      '@types/markdown-it': 14.1.2
-      markdown-it: 14.1.0
-
   '@mdit/plugin-img-lazyload@0.13.1(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.1.2
@@ -11859,12 +11821,6 @@ snapshots:
       markdown-it: 14.1.0
 
   '@mdit/plugin-tab@0.13.2(markdown-it@14.1.0)':
-    dependencies:
-      '@types/markdown-it': 14.1.2
-    optionalDependencies:
-      markdown-it: 14.1.0
-
-  '@mdit/plugin-tasklist@0.13.1(markdown-it@14.1.0)':
     dependencies:
       '@types/markdown-it': 14.1.2
     optionalDependencies:
@@ -12616,8 +12572,6 @@ snapshots:
   '@types/istanbul-reports@3.0.4':
     dependencies:
       '@types/istanbul-lib-report': 3.0.3
-
-  '@types/js-yaml@4.0.9': {}
 
   '@types/json-schema@7.0.15': {}
 
