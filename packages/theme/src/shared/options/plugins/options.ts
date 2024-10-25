@@ -6,11 +6,6 @@ import type { CopyrightPluginOptions } from "@vuepress/plugin-copyright";
 import type { DocSearchPluginOptions } from "@vuepress/plugin-docsearch";
 import type { FeedPluginOptions } from "@vuepress/plugin-feed";
 import type { GitPluginOptions } from "@vuepress/plugin-git";
-import type { LinksCheckPluginOptions } from "@vuepress/plugin-links-check";
-import type { MarkdownHintPluginOptions } from "@vuepress/plugin-markdown-hint";
-import type { MarkdownImagePluginOptions } from "@vuepress/plugin-markdown-image";
-import type { MarkdownMathPluginOptions } from "@vuepress/plugin-markdown-math";
-import type { MarkdownTabPluginOptions } from "@vuepress/plugin-markdown-tab";
 import type {
   NoticeOptions,
   NoticePluginOptions,
@@ -20,7 +15,6 @@ import type { PrismjsPluginOptions } from "@vuepress/plugin-prismjs";
 import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
-import type { RevealJsPluginOptions } from "@vuepress/plugin-revealjs";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
 import type { ShikiPluginOptions } from "@vuepress/plugin-shiki";
@@ -32,7 +26,39 @@ import type { SearchProPluginOptions } from "vuepress-plugin-search-pro";
 
 import type { BlogOptions } from "./blog.js";
 
-export interface PluginsOptions {
+export interface DeprecatedPluginsOptions {
+  /**
+   * @deprecated Use `markdown.linksCheck` instead
+   */
+  linksCheck?: never;
+
+  /**
+   * @deprecated Use `markdown.alert` and `markdown.hint` instead
+   */
+  markdownHint?: never;
+
+  /**
+   * @deprecated Use `markdown.figure` `markdown.imgLazyload` `markdown.imgMark` `markdown.imgSize` and `markdown.obsidianImgSize` instead
+   */
+  markdownImage?: never;
+
+  /**
+   * @deprecated Use `markdown.math` instead
+   */
+  markdownMath?: never;
+
+  /**
+   * @deprecated Use `markdown.codeTabs` and `markdown.tabs` instead
+   */
+  markdownTab?: never;
+
+  /**
+   * @deprecated Use `markdown.revealjs` instead
+   */
+  revealjs?: never;
+}
+
+export interface PluginsOptions extends DeprecatedPluginsOptions {
   /**
    * Enable @vuepress/active-header-links or not
    *
@@ -167,73 +193,6 @@ export interface PluginsOptions {
   git?: GitPluginOptions | boolean;
 
   /**
-   * Options for @vuepress/links-check
-   *
-   * @see https://ecosystem.vuejs.press/plugins/markdown/links-check.html
-   *
-   * @vuepress/links-check 插件配置
-   *
-   * @see https://ecosystem.vuejs.press/zh/plugins/markdown/links-check.html
-   */
-  linksCheck?: LinksCheckPluginOptions | boolean;
-
-  /**
-   * Options for @vuepress/markdown-hint
-   *
-   * @see https://ecosystem.vuejs.press/plugins/markdown/markdown-hint.html
-   *
-   * @description `true` equals to `{ hint: true }`
-   *
-   * @vuepress/markdown-hint 插件配置
-   *
-   * @see https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-hint.html
-   *
-   * @description `true` 等同于 `{ hint: true }`
-   *
-   * @default true
-   */
-  markdownHint?: MarkdownHintPluginOptions | boolean;
-
-  /**
-   * Options for @vuepress/markdown-image
-   *
-   * @see https://ecosystem.vuejs.press/plugins/markdown/markdown-image.html
-   *
-   * @description `true` equals to `{ figure: true, lazyload: true }`
-   *
-   * @vuepress/markdown-image 插件配置
-   *
-   * @see https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-image.html
-   *
-   * @description `true` 等同于 `{ figure: true, lazyload: true }`
-   *
-   * @default true
-   */
-  markdownImage?: MarkdownImagePluginOptions | boolean;
-
-  /**
-   * Options for @vuepress/markdown-math
-   *
-   * @see https://ecosystem.vuejs.press/plugins/markdown/markdown-math.html
-   *
-   * @vuepress/markdown-math 插件配置
-   *
-   * @see https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-math.html
-   */
-  markdownMath?: MarkdownMathPluginOptions | boolean;
-
-  /**
-   * Options for @vuepress/markdown-tab
-   *
-   * @see https://ecosystem.vuejs.press/plugins/markdown/markdown-tab.html
-   *
-   * @vuepress/markdown-tab 插件配置
-   *
-   * @see https://ecosystem.vuejs.press/zh/plugins/markdown/markdown-tab.html
-   */
-  markdownTab?: MarkdownTabPluginOptions | boolean;
-
-  /**
    * md-enhance plugin options
    *
    * @see https://plugin-md-enhance.vuejs.press/config/
@@ -326,17 +285,6 @@ export interface PluginsOptions {
    * @see https://ecosystem.vuejs.press/zh/plugins/tools/redirect.html
    */
   redirect?: RedirectPluginOptions | boolean;
-
-  /**
-   * Redirect options
-   *
-   * @see https://ecosystem.vuejs.press/plugins/markdown/revealjs/
-   *
-   * 重定向插件配置
-   *
-   * @see https://ecosystem.vuejs.press/zh/plugins/markdown/revealjs/
-   */
-  revealjs?: RevealJsPluginOptions | boolean;
 
   /**
    * @vuepress/search plugin options

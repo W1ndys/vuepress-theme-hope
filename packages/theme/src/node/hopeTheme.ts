@@ -49,6 +49,7 @@ export const hopeTheme = (
     const {
       favicon,
       hotReload = isDebug,
+      markdown = {},
       plugins = {},
       hostname,
       iconAssets,
@@ -134,11 +135,12 @@ export const hopeTheme = (
 
       plugins: getPlugins(
         app,
-        plugins,
         themeData,
 
         // @ts-expect-error: hostname might not exist
         {
+          markdown,
+          plugins,
           hostname,
           hotReload,
           iconAssets,

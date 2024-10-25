@@ -19,19 +19,27 @@ export default theme("md-enhance", {
     },
   },
 
+  markdown: {
+    codeTabs: true,
+    figure: true,
+    imgLazyload: true,
+    imgMark: true,
+    include: {
+      resolvePath: (file) => {
+        if (file.startsWith("@echarts"))
+          return file.replace(
+            "@echarts",
+            path.resolve(__dirname, "../echarts"),
+          );
+
+        return file;
+      },
+    },
+  },
+
   plugins: {
     components: {
       components: ["Badge", "VPCard"],
-    },
-
-    markdownImage: {
-      figure: true,
-      lazyload: true,
-      mark: true,
-    },
-
-    markdownTab: {
-      codeTabs: true,
     },
 
     mdEnhance: {
@@ -39,17 +47,6 @@ export default theme("md-enhance", {
       demo: true,
       echarts: true,
       flowchart: true,
-      include: {
-        resolvePath: (file) => {
-          if (file.startsWith("@echarts"))
-            return file.replace(
-              "@echarts",
-              path.resolve(__dirname, "../echarts"),
-            );
-
-          return file;
-        },
-      },
       kotlinPlayground: true,
       markmap: true,
       mermaid: true,
