@@ -10,7 +10,6 @@ export default [
       base: "client",
       files: [
         "index",
-        "compact/index",
         "components/ChartJS",
         "components/CodeDemo",
         "components/ECharts",
