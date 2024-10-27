@@ -159,6 +159,16 @@ export default theme(
       tabs: true,
       tasklist: true,
       vPre: true,
+
+      highlighter: {
+        type: "shiki",
+        lineNumbers: 15,
+        notationDiff: true,
+        themes: {
+          light: "one-light",
+          dark: "one-dark-pro",
+        },
+      },
     },
 
     plugins: {
@@ -220,15 +230,6 @@ export default theme(
         },
         sandpack: true,
         vuePlayground: true,
-      },
-
-      shiki: {
-        lineNumbers: 15,
-        notationDiff: true,
-        themes: {
-          light: "one-light",
-          dark: "one-dark-pro",
-        },
       },
 
       watermark: {

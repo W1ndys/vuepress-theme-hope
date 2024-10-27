@@ -6,7 +6,13 @@ import type { MarkdownIncludePluginOptions } from "@vuepress/plugin-markdown-inc
 import type { MarkdownMathPluginOptions } from "@vuepress/plugin-markdown-math";
 import type { MarkdownStylizePluginOptions } from "@vuepress/plugin-markdown-stylize";
 import type { MarkdownTabPluginOptions } from "@vuepress/plugin-markdown-tab";
+import type { PrismjsPluginOptions } from "@vuepress/plugin-prismjs";
 import type { RevealJsPluginOptions } from "@vuepress/plugin-revealjs";
+import type { ShikiPluginOptions } from "@vuepress/plugin-shiki";
+
+export type MarkdownHighlighterOptions =
+  | ({ type: "prismjs" } & PrismjsPluginOptions)
+  | ({ type: "shiki" } & ShikiPluginOptions);
 
 export interface MarkdownOptions
   extends MarkdownExtPluginOptions,
@@ -92,4 +98,13 @@ export interface MarkdownOptions
    * 是否启用 revealjs 支持
    */
   revealjs?: Omit<RevealJsPluginOptions, "layout"> | boolean;
+
+  /**
+   * Markdown highlighter options
+   *
+   * Markdown 高亮器选项
+   *
+   * @default "shiki"
+   */
+  highlighter?: MarkdownHighlighterOptions | "prismjs" | "shiki" | false;
 }

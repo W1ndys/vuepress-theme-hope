@@ -11,13 +11,11 @@ import type {
   NoticePluginOptions,
 } from "@vuepress/plugin-notice";
 import type { PhotoSwipePluginOptions } from "@vuepress/plugin-photo-swipe";
-import type { PrismjsPluginOptions } from "@vuepress/plugin-prismjs";
 import type { PwaPluginOptions } from "@vuepress/plugin-pwa";
 import type { ReadingTimePluginOptions } from "@vuepress/plugin-reading-time";
 import type { RedirectPluginOptions } from "@vuepress/plugin-redirect";
 import type { SearchPluginOptions } from "@vuepress/plugin-search";
 import type { SeoPluginOptions } from "@vuepress/plugin-seo";
-import type { ShikiPluginOptions } from "@vuepress/plugin-shiki";
 import type { SitemapPluginOptions } from "@vuepress/plugin-sitemap";
 import type { WatermarkPluginOptions } from "@vuepress/plugin-watermark";
 import type { ComponentPluginOptions } from "vuepress-plugin-components";
@@ -56,6 +54,16 @@ export interface DeprecatedPluginsOptions {
    * @deprecated Use `markdown.revealjs` instead
    */
   revealjs?: never;
+
+  /**
+   * @deprecated Use `markdown.highlighter` instead
+   */
+  prismjs?: never;
+
+  /**
+   * @deprecated Use `markdown.highlighter` instead
+   */
+  shiki?: never;
 }
 
 export interface PluginsOptions extends DeprecatedPluginsOptions {
@@ -237,19 +245,6 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
   photoSwipe?: PhotoSwipePluginOptions | boolean;
 
   /**
-   * Enable @vuepress/prismjs or not
-   *
-   * @see https://ecosystem.vuejs.press/plugins/markdown/prismjs.html
-   *
-   * 是否启用 @vuepress/prismjs 插件
-   *
-   * @see https://ecosystem.vuejs.press/zh/plugins/markdown/prismjs.html
-   *
-   * @default false
-   */
-  prismjs?: PrismjsPluginOptions | boolean;
-
-  /**
    * PWA plugin options
    *
    * @see https://ecosystem.vuejs.press/plugins/pwa/pwa/config.html
@@ -320,19 +315,6 @@ export interface PluginsOptions extends DeprecatedPluginsOptions {
    * @default true
    */
   seo?: Omit<SeoPluginOptions, "hostname" | "author"> | boolean;
-
-  /**
-   * Enable @vuepress/shiki or not
-   *
-   * @see https://ecosystem.vuejs.press/plugins/markdown/shiki.html
-   *
-   * 是否启用 @vuepress/shiki 插件
-   *
-   * @see https://ecosystem.vuejs.press/zh/plugins/markdown/shiki.html
-   *
-   * @default true
-   */
-  shiki?: ShikiPluginOptions | boolean;
 
   /**
    * Options for @vuepress/sitemap
