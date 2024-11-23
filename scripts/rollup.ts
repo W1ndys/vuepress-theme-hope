@@ -6,7 +6,7 @@ import type { RollupReplaceOptions } from "@rollup/plugin-replace";
 import replace from "@rollup/plugin-replace";
 import type { ModuleSideEffectsOption, RollupOptions } from "rollup";
 import copy from "rollup-plugin-copy";
-import dts from "rollup-plugin-dts";
+import { dts } from "rollup-plugin-dts";
 import esbuild from "rollup-plugin-esbuild";
 import { shebang } from "rollup-plugin-resolve-shebang";
 
